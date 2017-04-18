@@ -1,7 +1,7 @@
 class TasksController < ApplicationController
   before_action :set_tasks, only: [:show, :edit, :update, :destroy]
   def index
-    @tasks = Task.order(created_At: :desc).page(params[:page]).per(10)
+    @tasks = Task.order(created_at: :desc).page(params[:page]).per(10)
   end
   
   def show
