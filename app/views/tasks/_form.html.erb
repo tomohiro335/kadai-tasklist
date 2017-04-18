@@ -36,7 +36,7 @@
 <%# テスト collection_selectはデフォのもので、複雑なので人によっては使わない%>
 <%# simple formとかが使われやすい %>
 <%#= f.collection_select :status, Status.all, :id, :content %>
-<%= f.select :status, Status.status_choices, {}, :prompt => "選択してください", :class => 'form-control' %>
+<%= f.select :status, Status.status_choices, {:prompt => "選択してください"}, {:class => 'form-control'} %>
 
 </div>
 
