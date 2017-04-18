@@ -1,0 +1,18 @@
+<%= form_for(@task) do |f| %>
+
+<%= f.label :content, 'タスク' %>
+
+<%= f.text_field :content %>
+
+<%= f.label :status, 'タスクのステータス' %>
+
+<%#= f.text_field :status %>
+
+<%# テスト collection_selectはデフォのもので、複雑なので人によっては使わない%>
+<%# simple formとかが使われやすい %>
+<%#= f.collection_select :status, Status.all, :id, :content %>
+<%= f.select :status, Status.status_choices, :prompt => "選択してください" %>
+
+<%= f.submit '登録' %>
+
+<% end %>
