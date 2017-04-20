@@ -23,7 +23,9 @@ class TasksController < ApplicationController
       redirect_to root_url
     else
       flash.now[:danger] = 'タスクが登録されませんでした'
+      @tasks = current_user.tasks.order('created_at').page(params[:page])
       render 'toppages/index'
+#redirect_back(fallback_location: root_path)
     end
   end
   
@@ -36,7 +38,7 @@ class TasksController < ApplicationController
     
     if @task.update(task_params)
       flash[:success] = 'タスクの正常更新完了'
-#      redirect_to @task
+  #    redirect_to @task
       redirect_back(fallback_location: root_path)
     else
       flash.now[:danger] = 'タスクの更新失敗'

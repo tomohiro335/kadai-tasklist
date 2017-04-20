@@ -3,10 +3,13 @@
 
   <div class="row">
     <aside class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
-      <p>ログイン完了ユーザ: 
+      <p>
       <%= current_user.name %>
-      </p>
+      さん、こんにちは！</p>
       <%= form_for(@task) do |f| %>
+      
+      <%= render 'layouts/error_messages', model: f.object %>
+      
       <div class="form-group">
         <%= f.label :content, 'タスク' %>
         <%= f.text_area :content, class: 'form-control', rows: 5 %>
