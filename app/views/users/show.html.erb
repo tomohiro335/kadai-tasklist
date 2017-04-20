@@ -18,6 +18,10 @@
       <li><a href="#">タスク</a></li>
 <!--      <li><a href="#">Followings</a></li>
       <li><a href="#">Followers</a></li> -->
+          <div class="col-xs-8">
+      <%= render 'tasks/tasks', tasks: @tasks, user: @user %>
+    </div>
+
     </ul>
   </div>
 </div>
